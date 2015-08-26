@@ -27,7 +27,7 @@ namespace AgentTemplateNUnit.Test
 		}
 
         [Test]
-		public void ClientConstructorTest() {
+		public void ClientConstructorTest_InputEndpoints_IsServiceAccessible() {
 			Client x = new Client();
 			Assert.IsInstanceOf(typeof(Client), x);
 			Assert.AreEqual("NetTcpBinding_IService", x.EndpointName);
@@ -35,7 +35,7 @@ namespace AgentTemplateNUnit.Test
 		}
 
         [Test]
-		public void MainTests() {
+		public void MainTest_InputClient_IsAllTaskMethodsRunning() {
 			Client x = new Client();
 			DoPing(x);
 			DoGetTask(x);

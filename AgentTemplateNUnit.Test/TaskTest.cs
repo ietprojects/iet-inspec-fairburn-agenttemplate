@@ -15,7 +15,7 @@ namespace AgentTemplateNUnit.Test
     {
 
         [Test]
-        public void GetTaskTest()
+        public void GetTaskTest_InputTestMode1_ExpectTaskRecord()
         {
             WcfSelfHost host = new WcfSelfHost(typeof(Service));
             IET.Inspec.Fairburn.AgentTemplate.Task x = new IET.Inspec.Fairburn.AgentTemplate.Task();
@@ -29,7 +29,7 @@ namespace AgentTemplateNUnit.Test
         }
 
         [Test]
-        public void ProcessTaskTest()
+        public void ProcessTaskTest_InputTaskRecord_IsTaskLocked()
         {
             IET.Inspec.Fairburn.AgentTemplate.Task x = new IET.Inspec.Fairburn.AgentTemplate.Task();
             var privateObject = new Microsoft.VisualStudio.TestTools.UnitTesting.PrivateObject(x);
@@ -40,7 +40,7 @@ namespace AgentTemplateNUnit.Test
         }
 
         [Test]
-        public void PostResultsTests()
+        public void PostResultsTests_InputTestMode1_OutputSuccess()
         {
             WcfSelfHost host = new WcfSelfHost(typeof(Service));
             IET.Inspec.Fairburn.AgentTemplate.Task x = new IET.Inspec.Fairburn.AgentTemplate.Task();

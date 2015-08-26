@@ -53,9 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientTest.cs" />
-    <Compile Include="SampleTest.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceTest.cs" />
     <Compile Include="TaskTest.cs" />

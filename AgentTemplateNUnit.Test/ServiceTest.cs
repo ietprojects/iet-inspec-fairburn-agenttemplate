@@ -14,7 +14,7 @@ namespace AgentTemplateNUnit.Test
     public class ServiceTest
     {
         [Test]
-        public void PingTest()
+        public void PingTest_InputDBConnectionString_IsDBConnectionCorrect()
         {
             Service x = new Service();
             AgentPingResponse resp = x.Ping();
@@ -23,7 +23,7 @@ namespace AgentTemplateNUnit.Test
         }
 
         [Test]
-        public void GetTaskTest1()
+        public void GetTaskTest_InputTestMode1_OutputNullable()
         {
             Service x = new Service();
             GetTaskRequest req = new GetTaskRequest();
@@ -33,7 +33,7 @@ namespace AgentTemplateNUnit.Test
         }
 
         [Test]
-        public void GetTaskTest2()
+        public void GetTaskTest_InputTestMode2_OutputTaskRecord()
         {
             Service x = new Service();
             GetTaskRequest req = new GetTaskRequest();
@@ -44,14 +44,14 @@ namespace AgentTemplateNUnit.Test
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void GetTaskTestBad()
+        public void GetTaskTestBad_InputNull_ExpectedException()
         {
             Service x = new Service();
             x.GetTask(null);
         }
 
         [Test]
-        public void PostResultsTest1()
+        public void PostResultsTest_InputTestMode1_OutputSuccess()
         {
             Service x = new Service();
             PostResultsRequest req = new PostResultsRequest();
@@ -63,7 +63,7 @@ namespace AgentTemplateNUnit.Test
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void PostResultsTestBad()
+        public void PostResultsTestBad_InputNull_ExpectedException()
         {
             Service x = new Service();
             x.PostResults(null);
