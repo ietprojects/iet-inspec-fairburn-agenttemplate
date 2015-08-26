@@ -1,0 +1,23 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[AgentTemplatePostResults] (
+	@Lock uniqueidentifier,
+	@TestMode int = 0
+) AS
+BEGIN
+
+	SET NOCOUNT ON
+	SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+	IF @TestMode = 1
+	BEGIN
+
+		RETURN
+	END
+
+	-- Post Xyzzy results
+
+END
+GO

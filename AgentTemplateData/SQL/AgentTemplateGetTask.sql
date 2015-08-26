@@ -1,0 +1,41 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[AgentTemplateGetTask] (
+	@TestMode int = 0
+) AS
+BEGIN
+
+	SET NOCOUNT ON
+	SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+	DECLARE
+		@Now datetime
+
+	SELECT
+		@Now = GETUTCDATE()
+
+	IF @TestMode = 1
+	BEGIN
+
+		SELECT
+			CAST(0x0 AS uniqueidentifier) AS Lock
+		WHERE 1 = 0
+
+		RETURN
+	END
+
+	IF @TestMode = 2
+	BEGIN
+
+		SELECT
+			NEWID() AS Lock
+
+		RETURN
+	END
+
+	-- Get Xyzzy task
+
+END
+GO
