@@ -79,13 +79,13 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WcfBehaviors.config">
+    <None Include="WcfConfig\WcfBehaviors.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="WcfBindings.config">
+    <None Include="WcfConfig\WcfBindings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="WcfServices.config">
+    <None Include="WcfConfig\WcfServices.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -98,9 +98,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy $(ProjectDir)WcfBindings.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfServices.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfBehaviors.config $(ProjectDir)$(OutDir)</PreBuildEvent>
+    <PreBuildEvent>xcopy "$(ProjectDir)WcfConfig\*" "$(TargetDir)WcfConfig\" /Y</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>

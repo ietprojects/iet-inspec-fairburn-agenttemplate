@@ -89,8 +89,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Proxy\Service.wsdl" />
-    <None Include="WcfBindings.config" />
-    <None Include="WcfClient.config" />
+    <None Include="WcfConfig\WcfBindings.config" />
+    <None Include="WcfConfig\WcfClient.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -119,8 +119,7 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>copy $(ProjectDir)WcfBindings.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfClient.config $(ProjectDir)$(OutDir)</PreBuildEvent>
+    <PreBuildEvent>xcopy "$(ProjectDir)WcfConfig\*" "$(TargetDir)WcfConfig\" /Y</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

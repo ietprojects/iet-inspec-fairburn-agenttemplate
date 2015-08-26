@@ -73,20 +73,21 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="WcfBehaviors.config" />
-    <None Include="WcfBindings.config" />
-    <None Include="WcfClient.config" />
-    <None Include="WcfServices.config" />
+    <None Include="WcfConfig\WcfBehaviors.config" />
+    <None Include="WcfConfig\WcfBindings.config" />
+    <None Include="WcfConfig\WcfClient.config" />
+    <None Include="WcfConfig\WcfServices.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy $(ProjectDir)WcfBindings.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfServices.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfBehaviors.config $(ProjectDir)$(OutDir)
-copy $(ProjectDir)WcfClient.config $(ProjectDir)$(OutDir)</PreBuildEvent>
+    <PreBuildEvent>xcopy "$(ProjectDir)WcfConfig\*" "$(TargetDir)WcfConfig\" /Y</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
