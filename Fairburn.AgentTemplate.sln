@@ -17,6 +17,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{95E1D1A2-E49F-4AC9-AE91-3F1C42C6CAF5}"
 	ProjectSection(SolutionItems) = preProject
 		Libraries\Framework.dll = Libraries\Framework.dll
+		Libraries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll = Libraries\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+		Libraries\nunit.framework.dll = Libraries\nunit.framework.dll
 	EndProjectSection
 EndProject
 Global
